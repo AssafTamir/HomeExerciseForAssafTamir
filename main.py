@@ -1,20 +1,6 @@
-def add(a, b):
-    return a + b
+import operator
 
-
-def sub(a, b):
-    return a - b
-
-
-def mul(a, b):
-    return a * b
-
-
-def div(a, b):
-    return a / b
-
-
-operators = {'+': add, '-': sub, '*': mul, '/': div}
+operators = {'+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.truediv}
 
 
 def calc(s):
@@ -30,8 +16,7 @@ def calc(s):
 
 
 for line in open('Input_file.txt'):
-    line = line.replace(" ", "").strip()
-    value_array = line.split(',')
+    value_array = line.replace(" ", "").strip().split(',')
     res = [str(calc(x)) for x in value_array]
     print("""Menu:
 a. Print current state
